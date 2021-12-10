@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} All routes {% endblock %}</h1>
+
+    <p>Для покупки билета выберите желаемый рейс</p>
+    
+    {% for number in data %}
+        <a href="{{ url_for('ticket', id = number) }}">
+            <h2>{{routes_numbers[number]}}</h2>
+        </a>
+        <span class="badge badge-primary">From {{ dep_ap[number] }} at {{dep_time[number]}} to {{ dest_ap[number] }} at {{arr_time[number]}}</span>
+        <hr>
+    {% endfor %}
+{% endblock %}

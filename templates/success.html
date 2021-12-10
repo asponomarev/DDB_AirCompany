@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>{% block title %} Successful. {% endblock %}</h2>
+
+    <p> Congratulations! Your booking number is {{data}} </p>
+
+    <a href="{{url_for('start_page')}}">Back to Main Page</a>
+
+{% endblock %}

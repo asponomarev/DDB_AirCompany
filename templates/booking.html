@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>{% block title %} Track your booking {% endblock %}</h2>
+
+    <p> Please, enter the number of booking </p>
+
+    <form method="post">
+
+        <div class="form-group">
+            <label for="number">Number of booking</label>
+            <input type="text" name="number"
+                   placeholder="Enter number of booking" class="form-control"
+                   value="{{ request.form['number'] }}"></input>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+    <p>Information about your booking: {{data}}</p>
+{% endblock %}
